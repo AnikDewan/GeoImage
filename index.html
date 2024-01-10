@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>GeoIMAGE</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div class="brand">
+				<a href="#">
+					<img src="logo.png" alt="">
+				</a>
+			</div>
+			<div>
+				<a href="#contribute"><button class="btn btn-secondary">Contribute</button> </a>
+			</div>
+		</nav>
+		<section class="hero">
+			<div class="cta container">
+				<div class="intro">
+					<h1>
+						This website aligns with the WBBSE Class X Geography syllabus, providing organized, chapter-wise images for
+						enhanced comprehension. It aims to benefit numerous students in their studies.</h1>
+					<a href="#explore"><button class="btn btn-secondary">Explore</button></a>
+				</div>
+			</div>
+		</section>
+	</header>
+	<section class="index">
+		<h2> সূচিপত্র </h2>
+		<div class="contents">
+			<p>Chapter 1 : বহির্জাত প্রক্রিয়া ও তাদের দ্বারা সৃষ্ট ভূমিরূপ</p>
+			<p>Chapter 2 : বায়ুমণ্ডল</p>
+			<p>Chapter 3 : বারিমণ্ডল</p>
+			<p>Chapter 4 : বর্জ্য ব্যবস্থাপনা</p>
+			<p>Chapter 5 : ভারত (প্রাকৃতিক ও অর্থনৈতিক পরিবেশ)</p>
+			<p>Chapter 6 : উপগ্রহ চিত্র ও ভূ-বৈচিত্র্যসূচক মানচিত্র</p>
+		</div>
+	</section>
+	<section class="butcontrol" id="explore">
+		<div class="selector">
+			<button class="btn btn-primary" data-index="1" onclick="select(this)">Chapter 1</button>
+			<button class="btn btn-primary" data-index="2" onclick="select(this)">Chapter 2 </button>
+			<button class="btn btn-primary" data-index="3" onclick="select(this)">Chapter 3</button>
+			<button class="btn btn-primary" data-index="4" onclick="select(this)">Chapter 4</button>
+			<button class="btn btn-primary" data-index="5" onclick="select(this)">Chapter 5</button>
+			<button class="btn btn-primary" data-index="6" onclick="select(this)"">Chapter 6</button>
+		</div>
+		<div class=" selection">
+				<h4 id="selected">Select the chapter <i class="fa-solid fa-arrow-up fa-beat-fade"></i></h4>
+				<div id="search">
+					<div class="search">
+						<a><img src="search.png" alt=""></a>
+						<input id="srcinput" type="text" placeholder="Search..." onkeyup="SEARCH(this.value)">
+					</div>
+					<div id="suggestion"></div>
+				</div>
+		</div>
+	</section>
+	<section class="allCards" id="allCards">
+	</section>
+	<section id="contribute">
+		<form onsubmit="sendEmail(); reset(); return false;">
+			<h2>Contribute</h2>
+			<input type="number" id="chapter" name="chapter" placeholder="Chapter (1 to 6)" min="1" max="6" required>
+			<label for="chapter">ex- 1</label>
+			<input type="text" id="name" name="name" placeholder="Topic Name" required>
+			<label for="name">ex- পলল ব্যজনী Alluvial Fan</label>
+			<input type="text" id="doc" name="doc" placeholder="Documentation">
+			<label for="name">ex- https://en.m.wikipedia.org/wiki/Canyon</label>
+			<textarea id="images" name="images" rows="4" placeholder="Image links" required></textarea>
+			<label for="images">Hint - Every image link should be separated by a coma ( , ) .</label>
+			<button class="btn btn-primary" type="submit">Submit</button>
+		</form>
+	</section>
+	<footer>
+		<div>
+			<h6>This website is dedicated to </h6>
+			<h4>MALAYJIT KUNDU SIR</h4>
+		</div>
+		<div>
+			<h6>contact us</h6>
+			<i class="fa-solid fa-envelope fa-bounce"></i>
+			<p>geoimage0@gmail.com</p><br>
+			<i class="fa-regular fa-copyright"></i>
+			<p>ANIK DEWAN</p>
+		</div>
+	</footer>
+	<script src="script.js"></script>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+</body>
+
+</html>
